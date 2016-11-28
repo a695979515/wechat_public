@@ -704,8 +704,8 @@ public class WechatApi {
     }
 
     public static void main(String[] args) throws JSONException {
-        String access_token = "ze2R1zmBljpOXk72NII9mly53kR3wj5Y-slAeivU3LTOEHipZjs8UW3Q00FVNNvEYLrW5g6EZqI0LuNfLfpPvQaG_KcXs48OekNamVs7GNkcn4Yu5q6ALbnrAeMHgtgUCAHeAJAWUB";
-        ClickButton clickButton = new ClickButton();
+        String access_token = "QrUDFLc1oHZF9LxkGI0Z4UwlsuE2g2fj5lBmtWHeWUOc7fg2F52aBoO8-cWtRcpDagYae1slr1Ri84zhVZq-sGj-mOMvX_ndxKD9nc_Pt3YN3OU-vWuEMjxy1kLvEkt2GOHgACAUCV";
+        /*ClickButton clickButton = new ClickButton();
         clickButton.setKey("image");
         clickButton.setName("回复图片");
         clickButton.setType("click");
@@ -734,11 +734,12 @@ public class WechatApi {
 
         net.sf.json.JSONObject menujson = new net.sf.json.JSONObject();
         menujson.put("button",button);
-        System.out.println(menujson.toString());
+        System.out.println(menujson.toString());*/
 
-        String apiUrl = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" + access_token;
+      //  String apiUrl = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" + access_token;
+        String apiUrl = "https://api.weixin.qq.com/cgi-bin/menu/delconditional?access_token=" + access_token;
 
-        String result =new WechatApi().HttpPost(apiUrl,menujson.toString());
+        String result =new WechatApi().HttpGet(apiUrl);
         System.out.println(result);
 
     }
