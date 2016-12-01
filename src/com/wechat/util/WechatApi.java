@@ -704,12 +704,7 @@ public class WechatApi {
     }
 
     public static void main(String[] args) throws JSONException {
-        String access_token = "QrUDFLc1oHZF9LxkGI0Z4UwlsuE2g2fj5lBmtWHeWUOc7fg2F52aBoO8-cWtRcpDagYae1slr1Ri84zhVZq-sGj-mOMvX_ndxKD9nc_Pt3YN3OU-vWuEMjxy1kLvEkt2GOHgACAUCV";
 
-        String apiUrl = "https://api.weixin.qq.com/cgi-bin/menu/delconditional?access_token=" + access_token;
-
-        String result =new WechatApi().HttpGet(apiUrl);
-        System.out.println(result);
 
     }
 }
