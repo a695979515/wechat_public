@@ -704,7 +704,34 @@ public class WechatApi {
     }
 
     public static void main(String[] args) throws JSONException {
+        String access_token = "-UmiXe7VxSith9d8o0xX7Ob3i9nnxUQJuA_JHdRJkdfhKzVI_bmFuPI4uQva2LDrmouP03SbfIL6dvMzXQZlyGRvuMBT4GToqNCw5yOFdjss_CnLWDN5OVIQcNpRUQo8QWQfAHAUAU";
+        File file = new File("D:/123.jpg");
+        if (file.exists()) {
 
+            String apiUrl = "https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=" + access_token;
+            String result = null;
+            try {
+                result = new WechatApi().HttpPostUpload(apiUrl, file);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            } catch (KeyStoreException e) {
+                e.printStackTrace();
+            } catch (KeyManagementException e) {
+                e.printStackTrace();
+            }
+            System.out.println("result=" + result);
+        } else {
+            System.out.println("不存在");
+        }
+        //result={"media_id":"GlZhjhRDJLMirWhxQu-RCSBL8B56XUq25gi9P4hieSY","url":"http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/7zHbygAvicSBnuHzKD6VzeXebTdcCD0icHKXZtvXl62xsd0qOhia53Jm2CGiaVmAhefLylxMNt5Wt0MI0CFF3q3lGA\/0?wx_fmt=jpeg"}
+
+       /* String apiUrl = "https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=" + access_token;
+        String json = "{\n" +
+                "\"type\":\"image\",\n" +
+                "\"offset\":0,\n" +
+                "\"count\":20\n" +
+                "}";
+        String result = new WechatApi().HttpPost(apiUrl, json);*/
 
     }
 }
