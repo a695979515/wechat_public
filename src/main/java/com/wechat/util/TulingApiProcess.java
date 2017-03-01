@@ -42,6 +42,7 @@ public class TulingApiProcess {
         }
         try {
             JSONObject jsons = new JSONObject(result);
+            System.out.println("状态===="+jsons.getInt("code"));
             if (100000 == jsons.getInt("code")) {//100000	文本类
              // result=new AnswerUtil().ImageAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(),"GlZhjhRDJLMirWhxQu-RCbpHRzcnVhXNTi10JfBf5vw");
                 result = new AnswerUtil().TextAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), jsons.getString("text"));
@@ -50,7 +51,7 @@ public class TulingApiProcess {
                 newsEntity.setTitle(jsons.getString("text"));
                 newsEntity.setUrl(jsons.getString("url"));
                 newsEntity.setDescription(jsons.getString("text"));
-                newsEntity.setPicUrl("http://panfuhao.oss-cn-shenzhen.aliyuncs.com/u=565482614,3543868459&fm=21&gp=0.jpg");
+                newsEntity.setPicUrl("http://cesiumai.oss-cn-shenzhen.aliyuncs.com/upload/image/201701/51ce6e41-9866-45c7-8880-795f49a618e0.jpg");
                 List<NewsEntity> newsEntityList = new ArrayList<>();
                 newsEntityList.add(newsEntity);
                 result = new AnswerUtil().NewsAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), newsEntityList);

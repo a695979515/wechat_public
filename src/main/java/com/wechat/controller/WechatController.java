@@ -64,6 +64,7 @@ public class WechatController {
         } else {
             //消息处理
             result = new TulingApiProcess().getTulingResult(xmlEntity);
+            System.out.println("结果=="+result);
         }
         try {
             OutputStream os = response.getOutputStream();
