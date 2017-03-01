@@ -7,11 +7,8 @@
           <element id="module-output" name="wechat_public" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="commons-codec-1.10" />
           <element id="library" level="project" name="spring-aop-4.2.1.RELEASE" />
-          <element id="library" level="project" name="log4j-1.2.17" />
           <element id="library" level="project" name="jackson-annotations-2.2.1" />
-          <element id="library" level="project" name="httpcore-4.3.2" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="wechat_public/web/Web" />
