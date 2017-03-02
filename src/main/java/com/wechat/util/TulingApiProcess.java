@@ -42,7 +42,6 @@ public class TulingApiProcess {
         }
         try {
             JSONObject jsons = new JSONObject(result);
-            System.out.println("状态===="+jsons.getInt("code"));
             if (100000 == jsons.getInt("code")) {//100000	文本类
              // result=new AnswerUtil().ImageAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(),"GlZhjhRDJLMirWhxQu-RCbpHRzcnVhXNTi10JfBf5vw");
                 result = new AnswerUtil().TextAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), jsons.getString("text"));
@@ -59,21 +58,30 @@ public class TulingApiProcess {
                 JSONObject newjson = new JSONObject(result);
                 JSONArray jsonArray = new JSONArray(newjson.getString("list"));
                 List<NewsEntity> newsEntityList = new ArrayList<>();
+
                 for (int i = 0; i < jsonArray.length(); i++) {
-                    NewsEntity newsEntity = new NewsEntity();
+                    if(i==8){
+                        break;
+                    }
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    NewsEntity newsEntity = new NewsEntity();
                     newsEntity.setTitle(jsonObject.getString("article"));
                     newsEntity.setUrl(jsonObject.getString("detailurl"));
                     newsEntity.setDescription(jsonObject.getString("source"));
                     newsEntity.setPicUrl(jsonObject.getString("icon"));
                     newsEntityList.add(newsEntity);
+
                 }
                 result = new AnswerUtil().NewsAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), newsEntityList);
             } else if (308000 == jsons.getInt("code")) {//308000	菜谱类
                 JSONObject jsoninfo = new JSONObject(result);
                 JSONArray jsonArray = new JSONArray(jsoninfo.getString("list"));
                 List<NewsEntity> newsEntityList = new ArrayList<>();
+
                 for (int i = 0; i < jsonArray.length(); i++) {
+                    if(i==8){
+                        break;
+                    }
                     NewsEntity newsEntity = new NewsEntity();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     newsEntity.setTitle(jsonObject.getString("name"));
@@ -81,6 +89,7 @@ public class TulingApiProcess {
                     newsEntity.setDescription(jsonObject.getString("info"));
                     newsEntity.setPicUrl(jsonObject.getString("icon"));
                     newsEntityList.add(newsEntity);
+
                 }
                 result = new AnswerUtil().NewsAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), newsEntityList);
             }

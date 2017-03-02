@@ -44,7 +44,7 @@ public class AnswerUtil {
         sb.append("<xml>");
         sb.append("<ToUserName><![CDATA[" + toUserName + "]]></ToUserName>");
         sb.append("<FromUserName><![CDATA[" + fromUserName + "]]></FromUserName>");
-        sb.append("<CreateTime>" + data + "</CreateTime>");
+        sb.append("<CreateTime>" + data.getTime() + "</CreateTime>");
         sb.append("<MsgType><![CDATA[image]]></MsgType>");
         sb.append("<Image>");
         sb.append("<MediaId><![CDATA[" + mediaId + "]]></MediaId>");
@@ -67,7 +67,7 @@ public class AnswerUtil {
         sb.append("<xml>");
         sb.append("<ToUserName><![CDATA[" + toUserName + "]]></ToUserName>");
         sb.append("<FromUserName><![CDATA[" + fromUserName + "]]></FromUserName>");
-        sb.append("<CreateTime>" + data + "</CreateTime>");
+        sb.append("<CreateTime>" + data.getTime() + "</CreateTime>");
         sb.append("<MsgType><![CDATA[voice]]></MsgType>");
         sb.append("<Voice>");
         sb.append("<MediaId><![CDATA[" + mediaId + "]]></MediaId>");
@@ -92,7 +92,7 @@ public class AnswerUtil {
         sb.append("<xml>");
         sb.append("<ToUserName><![CDATA[" + toUserName + "]]></ToUserName>");
         sb.append("<FromUserName><![CDATA[" + fromUserName + "]]></FromUserName>");
-        sb.append("<CreateTime>" + data + "</CreateTime>");
+        sb.append("<CreateTime>" + data.getTime() + "</CreateTime>");
         sb.append("<MsgType><![CDATA[video]]></MsgType>");
         sb.append("<Video>");
         sb.append("<MediaId><![CDATA[" + mediaId + "]]></MediaId>");
@@ -121,7 +121,7 @@ public class AnswerUtil {
         sb.append("<xml>");
         sb.append("<ToUserName><![CDATA[" + toUserName + "]]></ToUserName>");
         sb.append("<FromUserName><![CDATA[" + fromUserName + "]]></FromUserName>");
-        sb.append("<CreateTime>" + data + "</CreateTime>");
+        sb.append("<CreateTime>" + data.getTime() + "</CreateTime>");
         sb.append("<MsgType><![CDATA[music]]></MsgType>");
         sb.append("<Music>");
         sb.append("<Title><![CDATA[" + title + "]]></Title>");
@@ -148,7 +148,7 @@ public class AnswerUtil {
             sb.append("<xml>");
             sb.append("<ToUserName><![CDATA[" + toUserName + "]]></ToUserName>");
             sb.append("<FromUserName><![CDATA[" + fromUserName + "]]></FromUserName>");
-            sb.append("<CreateTime>" + data + "</CreateTime>");
+            sb.append("<CreateTime>" + data.getTime() + "</CreateTime>");
             sb.append("<MsgType><![CDATA[news]]></MsgType>");
             sb.append("<ArticleCount>" + newsEntities.size() + "</ArticleCount>");
             sb.append("<Articles>");
